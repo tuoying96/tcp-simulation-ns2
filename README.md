@@ -72,5 +72,8 @@ All experiments are conducted in NS-2, an object-oriented, discrete event driven
 ### 4 Statistics Approaches
 Three parameters, drop rate, latency, throughput are taken into consideration when evaluating performance here. Drop rate is the percentage of dropped packets in total packets that have been sent. Latency in our experiments is measured as one-way, which is the time from the source sending a packet to the destination receiving it. Throughput is measured in Mbits per second (Mbit/s or Mbps), i.e. total data packets size per second.  
 
-The formulas for calculating them are as follows:
-$\sum_{r=1}^n$
+The formulas for calculating them are as follows:  
+  
+$$\[latency = \frac{\sum_{i=1}^n trip time of reveived packet i}{number of reveived packets}\]$$  
+$$\[throughput = \frac{total packets received * avg packet size}{time}\]$$  
+$$\[throughput = \frac{dropped pacckets}{total packets sent} * 100%\]$$  
