@@ -20,7 +20,7 @@ Before any experiment, we should set up the networks to the topology, to make th
 Generalization: If for the same input, the output is always the same (e.g. if the CBR flow rate is fixed, the packet loss rate is always the same after we add in the TCP), then the result is only a special case. We need to do something to make the result general. I think maybe we should randomly choose some other parameters from a certain range. These parameters can be the delay time, how much time TCP runs, or the seed, etc.
 
 ## 2 Design of Experiments and Methodology
-### Methodology
+### 2.1 Methodology
                          N1                      N4
                            \                    /
                             \                  /
@@ -30,12 +30,12 @@ Generalization: If for the same input, the output is always the same (e.g. if th
                          N5                      N6
 Networks topology for our three experiments is shown in the figure above, and set the bandwidth of each link to 10Mbps.  
 All experiments are conducted in NS-2, an object-oriented, discrete event driven network simulator developed at UC Berkely written in C++ and OTcl.  
-### Parameters Setting
+### 2.2 Parameters Setting
 **Queuing Discipline**: The queuing discipline of each link in experiment 1 and experiment 2 is DropTail with default queue size. In experiment 3, we compare the performance of two queue algorithms - Drop Tail and Random Early Drop (RED).  
 **Window Size**: The window size of TCP streams in all the experiments are set as 20, which is the default size in NS2.  
 
 
-### Experiment 1: TCP Performance Under Congestion
+### 2.3 Experiment 1: TCP Performance Under Congestion
 #### Purpose:
 The purpose in this experiment is to evaluate performance of Tahoe, Reno, New Reno and Vegas under congestion. We vary the CBR rate from 1 to 10Mbps.
 #### Experiment Configurations:
@@ -52,7 +52,7 @@ The purpose in this experiment is to evaluate performance of Tahoe, Reno, New Re
 	About the CBR flow rate: We may want to try some value larger than 10Mbps to see if there is any difference, hope there will be a value such that any CBR flow rate larger than it will lead to the same result. We may add new cases to make the spacing smaller if necessary, or may use larger spacing when presenting the results.
 
 	
-### Experiment 2: Fairness Between TCP Variants
+### 2.4 Experiment 2: Fairness Between TCP Variants
 #### Purpose:
 We will conduct experiments to analyze the fairness between different TCP variants. There are many different operating systems out on the Internet, and they may use a different TCP variant, whihc resulting different performance of TCP Variants.
 #### Experiment Configurations:
@@ -75,7 +75,7 @@ We will conduct experiments to analyze the fairness between different TCP varian
 	About the CBR flow rate: We can use the value from the first experiment, but in case two TCP streams make difference, we should still try some value out of the range got in experiment 1.
 	
 	
-### Experiment 3: Influence of Queuing
+### 2.5 Experiment 3: Influence of Queuing
 #### Purpose:
 In this experiment, we will compare the performance of two different queue algorithms - Drop Tail and Random Early Drop (RED) - with two TCP variants Reno and SACK under congestion. We will set one TCP flow from N1 to N4 and one CBR flow from N5 to N6.
 
