@@ -36,9 +36,9 @@ All experiments are conducted in NS-2, an object-oriented, discrete event driven
 
 
 ### 2.3 Experiment 1: TCP Performance Under Congestion
-#### Purpose:
+#### 2.3.1 Purpose:
 The purpose in this experiment is to evaluate performance of Tahoe, Reno, New Reno and Vegas under congestion. We vary the CBR rate from 1 to 10Mbps.
-#### Experiment Configurations:
+#### 2.3.2 Experiment Configurations:
     We will add a Constant Bit Rate (CBR) from N2 to N3, then add a TCP stream from N1 to a sink at N4; we start both traffic sources at 0. Therefore, we can analyze the throughput, packet drop rate, and latency of the TCP stream as a function of the bandwidth used by the CBR flow. 
 	
 	Input should be the flow rate of CBR(Constant Bit Rate) flow.
@@ -53,9 +53,9 @@ The purpose in this experiment is to evaluate performance of Tahoe, Reno, New Re
 
 	
 ### 2.4 Experiment 2: Fairness Between TCP Variants
-#### Purpose:
+#### 2.4.1 Purpose:
 We will conduct experiments to analyze the fairness between different TCP variants. There are many different operating systems out on the Internet, and they may use a different TCP variant, whihc resulting different performance of TCP Variants.
-#### Experiment Configurations:
+#### 2.4.2 Experiment Configurations:
     We will start three flows: one CBR, and two TCP. We will set a CBR from N2 to N3, then add two TCP streams from N1 to N4 and N5 to N6 respectively. Next, We conduct experiments with the fours TCP variants pairs 
     - Reno/Reno
     - NewReno/Reno
@@ -76,10 +76,10 @@ We will conduct experiments to analyze the fairness between different TCP varian
 	
 	
 ### 2.5 Experiment 3: Influence of Queuing
-#### Purpose:
+#### 2.5.1 Purpose:
 In this experiment, we will compare the performance of two different queue algorithms - Drop Tail and Random Early Drop (RED) - with two TCP variants Reno and SACK under congestion. We will set one TCP flow from N1 to N4 and one CBR flow from N5 to N6.
 
-#### Experiment Configurations:
+#### 2.5.2 Experiment Configurations:
     We will set one TCP flow from N1 to N4 and another CBR/UDP flow from N5 to N6. We can compare the performance of two different queue algorithms - Drop Tail and RED - with two TCP variants TCP Reno and SACK under congestion.
 
 	Input: one of the two queuing disciplines, maybe the bandwidth of the CBR flow, how much time the TCP stream runs, maybe how often packet loss happens or how many packet losses happen.
