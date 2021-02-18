@@ -109,6 +109,7 @@ In Experiment 2, we should plot the average throughput, packet loss rate, and la
  - NewReno/Reno  
  - Vegas/Vegas  
  - NewReno/Vegas   
+  
 We should answer the questions,    
   1. Are the different combinations of variants fair to each other? 
   2. Are there combinations that are unfair, and if so, why is the combination unfair? 
